@@ -1,0 +1,1 @@
+Trinity is a Flutter app featuring a Home and Notifications screen built from Figma designs. It fetches and parses JSON from an API, using Dart isolates for background processing to ensure smooth UI performance, with routing and optional unit tests included.
