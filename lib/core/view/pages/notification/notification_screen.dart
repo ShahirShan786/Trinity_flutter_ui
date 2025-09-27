@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:ui_machine_task/core/bloc/notificatinons/bloc/notification_bloc.dart';
 import 'package:ui_machine_task/core/bloc/notificatinons/bloc/notification_event.dart';
@@ -69,6 +70,7 @@ class NotificationScreen extends StatelessWidget {
             } else if (state is NotificationLoaded) {
               final notification = state.notifications;
               return ListView.builder(
+                physics: BouncingScrollPhysics(),
                 itemCount: notification.length,
                 itemBuilder: (context, index) {
                   final data = notification[index];
@@ -111,10 +113,11 @@ class NotificationScreen extends StatelessWidget {
                                 child: Text(
                                   data.title,
                                   maxLines: 2,
-                                  style: TextStyle(
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
+                                  style: GoogleFonts.quicksand(
+                                    textStyle: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -124,10 +127,11 @@ class NotificationScreen extends StatelessWidget {
                                 child: Text(
                                   data.body,
                                   maxLines: 2,
-                                  style: TextStyle(
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black,
+                                  style: GoogleFonts.quicksand(
+                                    textStyle: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14.sp,
+                                    ),
                                   ),
                                 ),
                               ),
