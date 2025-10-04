@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:ui_machine_task/core/view/pages/home/home_screen.dart';
+import 'package:ui_machine_task/core/view/pages/dashboard/dashboard_screen.dart';
 import 'package:ui_machine_task/core/view/pages/notification/notification_screen.dart';
 import 'package:ui_machine_task/core/view/pages/utils/dummy_screen.dart';
 import 'package:ui_machine_task/core/view/pages/utils/widget_helper.dart';
@@ -15,7 +15,7 @@ class AppRouter {
             (context, state) => buildPageWithDefaultTransition(
               context: context,
               state: state,
-              child: const HomeScreen(),
+              child: const DashboardScreen(),
             ),
       ),
       GoRoute(
